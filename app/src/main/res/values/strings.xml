@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GitGud</string>
+    <string name="git_good">Git Good</string>
+    <string name="sign_in">Sign in with GitHub</string>
 </resources>
