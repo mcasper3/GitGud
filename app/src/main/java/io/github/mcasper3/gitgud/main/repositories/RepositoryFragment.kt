@@ -1,18 +1,19 @@
-package io.github.mcasper3.gitgud.repositories
+package io.github.mcasper3.gitgud.main.repositories
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import io.github.mcasper3.gitgud.R
-import io.github.mcasper3.gitgud.base.BaseFragment
+import io.github.mcasper3.gitgud.base.list.ListFragment
 import javax.inject.Inject
 
-class RepositoryFragment : BaseFragment() {
+class RepositoryFragment : ListFragment() {
 
     @Inject internal lateinit var presenter: RepositoryPresenter
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater?.inflate(R.layout.fragment_list, container)
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        presenter.getRepositories()
+            .subscribe {
+                adapter.viewHolderFactories = it
+            }
     }
 }

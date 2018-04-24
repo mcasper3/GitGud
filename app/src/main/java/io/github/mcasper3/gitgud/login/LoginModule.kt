@@ -8,6 +8,7 @@ import retrofit2.Retrofit
 
     @Module
     companion object {
+
         @JvmStatic @Provides fun provideLoginService(retrofit: Retrofit) = retrofit.create(LoginService::class.java)
     }
 }

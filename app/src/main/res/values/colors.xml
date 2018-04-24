@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">@color/darkGray</color>
-    <color name="colorPrimaryDark">#1D1D1D</color>
+    <color name="colorPrimaryDark">@color/black</color>
     <color name="colorAccent">@color/gold</color>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="darkGray">#424242</color>
+    <color name="midnightGray">#424242</color>
+    <color name="darkGray">#1D1D1D</color>
     <color name="gold">#FBC007</color>
     <color name="transparentBlack">#66000000</color>
 </resources>

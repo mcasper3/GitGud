@@ -3,18 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraint_layout"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="io.github.mcasper3.gitgud.login.LoginActivity"
     >
 
     <ImageView
-        android:id="@+id/iv_background"
+        android:id="@+id/backgroundImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/login_background"
         android:scaleType="centerCrop"
+        android:src="@drawable/login_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,14 +24,15 @@
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/transparentBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/transparentBlack" />
+        />
 
     <ImageView
-        android:id="@+id/iv_logo"
+        android:id="@+id/logo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/git_good"
@@ -42,7 +43,7 @@
         />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
