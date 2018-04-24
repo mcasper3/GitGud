@@ -1,4 +1,4 @@
-package io.github.mcasper3.gitgud.repositories
+package io.github.mcasper3.gitgud.main.repositories
 
 import dagger.Module
 import dagger.Provides

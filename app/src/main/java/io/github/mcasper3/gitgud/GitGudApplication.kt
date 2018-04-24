@@ -29,7 +29,9 @@ class GitGudApplication : Application(), HasActivityInjector {
 
         LeakCanary.install(this)
 
-        DaggerApplicationComponent.create()
+        DaggerApplicationComponent.builder()
+            .application(this)
+            .build()
             .inject(this)
 
         if (BuildConfig.DEBUG) {

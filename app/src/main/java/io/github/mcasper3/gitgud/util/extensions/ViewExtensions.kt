@@ -13,3 +13,22 @@ fun View.afterInflate(body: () -> Unit) {
 
     this.viewTreeObserver.addOnGlobalLayoutListener(O())
 }
+
+fun View.doOnPreDraw(body: () -> Unit) {
+    viewTreeObserver.addOnPreDrawListener(
+        object : ViewTreeObserver.OnPreDrawListener {
+            override fun onPreDraw(): Boolean {
+                viewTreeObserver.removeOnPreDrawListener(this)
+                body()
+                return true
+            }
+        })
+}
+
+fun View.showIf(shouldShow: Boolean) {
+    visibility = if (shouldShow) View.VISIBLE else View.GONE
+}
+
+fun View.hideIf(shouldHide: Boolean) {
+    visibility = if (shouldHide) View.GONE else View.VISIBLE
+}

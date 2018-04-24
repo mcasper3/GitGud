@@ -1,9 +1,12 @@
-package io.github.mcasper3.gitgud
+package io.github.mcasper3.gitgud.main
 
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
+import io.github.mcasper3.gitgud.R
 import io.github.mcasper3.gitgud.base.GitGudActivity
-import io.github.mcasper3.gitgud.repositories.RepositoryFragment
-import io.github.mcasper3.gitgud.repositories.RepositoryRouter
+import io.github.mcasper3.gitgud.base.list.RecyclerViewConfiguration
+import io.github.mcasper3.gitgud.main.repositories.RepositoryFragment
+import io.github.mcasper3.gitgud.main.repositories.RepositoryRouter
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -16,12 +19,14 @@ class MainActivity : GitGudActivity() {
         setContentView(R.layout.activity_main)
 
         // TODO backstack listener to update the toolbar and animate fab
-        savedInstanceState?.let {
+        if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.content, RepositoryFragment())
+                .replace(R.id.content, RepositoryFragment().apply {
+                    this.configuration = RecyclerViewConfiguration(LinearLayoutManager(context))
+                })
                 .commit()
         }
 
-        bottom_bar.setOnNavigationItemSelectedListener { true }
+        bottomBar.setOnNavigationItemSelectedListener { true }
     }
 }
